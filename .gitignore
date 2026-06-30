@@ -12,6 +12,12 @@ venv/
 
 
 
+# 환경 변수 (API Key 등 — GitHub에 올리지 않음)
+
+.env
+
+
+
 # ChromaDB가 자동으로 만드는 폴더 (재생성 가능)
 
 backend/chroma_db/
