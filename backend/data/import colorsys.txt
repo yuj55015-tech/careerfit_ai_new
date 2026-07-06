@@ -1,0 +1,33 @@
+import colorsys
+import matplotlib.pyplot as plt
+
+
+def generate_hsv_palette(n, s=0.7, v=0.9):
+    """
+    n: 색 개수
+    s: 채도 (0~1)
+    v: 명도 (0~1)
+    """
+    palette = []
+    for i in range(n):
+        h = i / n  # Hue를 균등 분할
+        r, g, b = colorsys.hsv_to_rgb(h, s, v)
+        palette.append((r, g, b))
+    return palette
+
+# 팔레트 생성
+colors = generate_hsv_palette(8)
+
+# 시각화
+plt.figure(figsize=(8, 2))
+for i, color in enumerate(colors):
+    plt.fill_between([i, i+1], 0, 1, color=color)
+
+plt.xlim(0, len(colors))
+plt.ylim(0, 1)
+plt.xticks([])
+plt.yticks([])
+plt.show()
+
+
+print(313)
